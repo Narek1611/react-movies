@@ -64,5 +64,17 @@
     "@tailwindcss/postcss7-compat": "^2.2.7",
     "autoprefixer": "^9",
     "postcss": "^7"
-  }
+  },
+  "description": "![Cinema-Nevs](https://jewishpgh.org/app/uploads/2021/07/cinema-in-the-park-Calendar-Featured-Image-1920w-x-1008h-1200x630.png)",
+  "main": "craco.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarlenNersisyan/Cinema-Nevs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarlenNersisyan/Cinema-Nevs/issues"
+  },
+  "homepage": "https://github.com/KarlenNersisyan/Cinema-Nevs#readme"
 }
