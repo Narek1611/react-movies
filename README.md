@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# [Cinema-Nevs]()
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Cinema-Nevs](https://jewishpgh.org/app/uploads/2021/07/cinema-in-the-park-Calendar-Featured-Image-1920w-x-1008h-1200x630.png)
 
-## Available Scripts
+_Description_
+---
 
-In the project directory, you can run:
+    Big Screen, Film, Filmdom, Filmland, Filmmaking, Movie, Moviemaking, Pictures, Screen, Silver Screen... 
+    
 
-### `yarn start`
+## The following libraries were used in the project:
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [React](https://reactjs.org/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
 
-### `yarn test`
+* [Prop-Types](https://www.npmjs.com/package/prop-types)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Classnames](https://www.npmjs.com/package/classnames)
 
-### `yarn build`
+* [TailWindCss](https://tailwindcss.com/docs/guides/create-react-app)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Yup](https://www.npmjs.com/package/yup)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [Formik](https://formik.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+### Creator
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+_[Karlen Nersisyan](https://www.facebook.com/karlen.nersisyan.1999/)_
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- My
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - [Twitter](https://twitter.com/nersisyan_karl)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - [Linkedin](https://www.linkedin.com/in/karlen-nersisyan/)
 
-## Learn More
+  - [Codepen](https://codepen.io/karlennersisyan/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - [Replit](https://replit.com/@KarlenNersisyan)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
