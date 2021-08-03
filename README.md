@@ -21,6 +21,8 @@ _Description_
 
 * [TailWindCss](https://tailwindcss.com/docs/guides/create-react-app)
 
+* [Material Ui](https://material-ui.com/ru/)
+
 * [Yup](https://www.npmjs.com/package/yup)
 
 * [Formik](https://formik.org/)
