@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   loginName: {
-    fontSize: '25px',
+    fontSize: '24px',
     margin: '5px',
   },
   navbarColor: {
