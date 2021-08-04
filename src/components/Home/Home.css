@@ -1,0 +1,5 @@
+.backgroundHome{
+  background: url('../../assets/images/cinemaBackground.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}

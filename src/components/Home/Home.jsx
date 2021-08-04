@@ -8,11 +8,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
 } from 'react-router-dom';
 import Favorite from '../Favorite/Favorite';
 import MovieDetail from '../MovieDetails/MovieDetails';
+import './Home.css'
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -28,7 +27,7 @@ export default function Home() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Box display="flex" flexWrap="wrap">
+            <Box display="flex" flexWrap="wrap" className='backgroundHome'>
               {movies.map((movie) => {
                 return (
                   <MovieCard
