@@ -20,6 +20,7 @@
   top: 72px;
   left: 0;
   border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 50px whitesmoke;
 }
 .poster {
   width: 25% !important;
@@ -31,17 +32,26 @@
 }
 .date {
   width: 12% !important;
-  height: 70px;
+  height: 50px;
   position: absolute;
   top: 400px;
   left: 30px;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-left: 3px solid rgb(0, 0, 0);
+  padding: 10px;
+
+
 }
 .info {
   width: 12% !important;
-  height: 70px;
+  height: 50px;
   position: absolute;
   top: 400px;
   left: 197px;
+  border-right: 3px solid rgb(0, 0, 0);
+  padding: 10px;
+
+
 }
 .title {
   width: 65% !important;
@@ -49,6 +59,8 @@
   position: absolute;
   top: 40px;
   right: 30px;
+  border-left: 3px solid rgb(0, 0, 0);
+  padding: 10px;
 }
 
 .overview {
@@ -57,26 +69,33 @@
   position: absolute;
   top: 120px;
   right: 30px;
-  border: 1px dotted rgb(255, 255, 255);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  border-top: 5px dotted rgb(0, 0, 0);
 }
 .rating {
   width: 21% !important;
-  height: 70px;
+  height: 50px;
   position: absolute;
   top: 400px;
   right: 602px;
+  border-right: 3px solid rgb(0, 0, 0);
+  padding: 10px;
 }
 .status {
   width: 21% !important;
-  height: 70px;
+  height: 50px;
   position: absolute;
   top: 400px;
   right: 30px;
+  border-right: 3px solid rgb(0, 0, 0);
+  padding: 10px;
 }
 .runtime {
   width: 21% !important;
-  height: 70px;
+  height: 50px;
   position: absolute;
   top: 400px;
   right: 315px;
+  border-right: 3px solid rgb(0, 0, 0);
+  padding: 10px;
 }

@@ -4,6 +4,7 @@ import { getImgUrl, getMovieById } from '../../services/services';
 import Loading from '../Loading/Loading';
 import StarsIcon from '@material-ui/icons/Stars';
 import Box from '@material-ui/core/Box';
+import MovieFilterTwoToneIcon from '@material-ui/icons/MovieFilterTwoTone';
 import './MovieDetails.css';
 
 export default function MovieDetail() {
@@ -45,13 +46,15 @@ export default function MovieDetail() {
           <b>{movieDetail.status}</b>
         </Box>
         <Box className="title">
-          <b>{movieDetail.title}</b>
+          <b> --- {movieDetail.title} ---</b>
         </Box>
         <Box className="overview">
           <i>{movieDetail.overview}</i>
+
+          <MovieFilterTwoToneIcon />
         </Box>
         <Box className="rating">
-          <StarsIcon /> 
+          <StarsIcon />
           {movieDetail.vote_average}
         </Box>
         <Box className="status">
