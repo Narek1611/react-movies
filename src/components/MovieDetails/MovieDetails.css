@@ -1,0 +1,5 @@
+.backgroundLoading {
+  background: url('../../assets/images/loading.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}

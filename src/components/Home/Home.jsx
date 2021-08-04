@@ -45,7 +45,7 @@ export default function Home() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/movie/:id" children={<MovieDetail />}></Route>
+          <Route path="/:id" children={<MovieDetail />}></Route>
         </Switch>
       </div>
     </Router>

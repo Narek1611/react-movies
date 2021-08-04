@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieById } from '../../services/services';
+import Loading from '../Loading/Loading';
+import Box from '@material-ui/core/Box';
+import './MovieDetails.css';
 
 export default function MovieDetail() {
   let { id } = useParams();
@@ -13,5 +16,11 @@ export default function MovieDetail() {
   }, [id]);
 
   console.log(movieDetail);
-  return movieDetail.length === 0 ? <p>Loading</p> : <p>{movieDetail.title}</p>;
+  return movieDetail.length === 0 ? (
+    <Box className="backgroundLoading">
+      <Loading />
+    </Box>
+  ) : (
+    <p>{movieDetail.title}</p>
+  );
 }

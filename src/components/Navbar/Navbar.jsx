@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InputBase from '@material-ui/core/InputBase';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { Typography } from '@material-ui/core';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -24,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
-      width: '350px',
     },
   },
   search: {
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(25),
       width: 'auto',
     },
   },
@@ -161,8 +161,12 @@ export default function PrimarySearchAppBar() {
               aria-label="open drawer"
             >
               <GroupWorkIcon fontSize="large" />
-              Cinema Nevs
             </IconButton>
+          </Link>
+          <Link to='/'>
+          <Typography className={classes.title} variant="h6" noWrap>
+            Cinema Nevs
+          </Typography>
           </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
