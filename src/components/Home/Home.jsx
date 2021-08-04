@@ -4,14 +4,11 @@ import MovieCard from '../MovieCard/MovieCard';
 import Box from '@material-ui/core/Box';
 import { getMoviesByPage } from '../../services/services';
 import { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favorite from '../Favorite/Favorite';
+import Login from '../Authentication/Login/Login';
 import MovieDetail from '../MovieDetails/MovieDetails';
-import './Home.css'
+import './Home.css';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -27,7 +24,7 @@ export default function Home() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Box display="flex" flexWrap="wrap" className='backgroundHome'>
+            <Box display="flex" flexWrap="wrap" className="backgroundHome">
               {movies.map((movie) => {
                 return (
                   <MovieCard
@@ -45,7 +42,10 @@ export default function Home() {
           <Route path="/favorite">
             <Favorite />
           </Route>
-          <Route path="/:id" children={<MovieDetail />}></Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/movie/:id" children={<MovieDetail />}></Route>
         </Switch>
       </div>
     </Router>

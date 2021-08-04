@@ -3,7 +3,6 @@ import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
@@ -131,18 +130,22 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton color="inherit">
-          <FavoriteIcon />
-        </IconButton>
-        <p>Favorite</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton color="inherit">
-          <VpnKeyIcon />
-        </IconButton>
-        <p>Log In</p>
-      </MenuItem>
+      <Link to="/favorite">
+        <MenuItem>
+          <IconButton color="inherit">
+            <FavoriteIcon />
+          </IconButton>
+          <p>Favorite</p>
+        </MenuItem>
+      </Link>
+      <Link to="/login">
+        <MenuItem>
+          <IconButton color="inherit">
+            <VpnKeyIcon />
+          </IconButton>
+          <p>Log In</p>
+        </MenuItem>
+      </Link>
     </Menu>
   );
 
@@ -158,11 +161,9 @@ export default function PrimarySearchAppBar() {
               aria-label="open drawer"
             >
               <GroupWorkIcon fontSize="large" />
+              Cinema Nevs
             </IconButton>
           </Link>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Cinema Nevs
-          </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -184,10 +185,12 @@ export default function PrimarySearchAppBar() {
                 <FavoriteIcon />
               </IconButton>
             </Link>
-            <IconButton color="inherit">
-              <p className={classes.loginName}>Log In</p>
-              <VpnKeyIcon />
-            </IconButton>
+            <Link to="/login">
+              <IconButton color="inherit">
+                <p className={classes.loginName}>Log In</p>
+                <VpnKeyIcon />
+              </IconButton>
+            </Link>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
