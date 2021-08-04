@@ -2,22 +2,33 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import MovieCard from '../MovieCard/MovieCard';
 import Box from '@material-ui/core/Box';
-import { getMoviesByPage } from '../../services/services';
+import { getGenres, getMoviesByPage } from '../../services/services';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favorite from '../Favorite/Favorite';
 import Login from '../Authentication/Login/Login';
 import MovieDetail from '../MovieDetails/MovieDetails';
+import { findGenreName } from '../../helpers/findGenreName';
 import './Home.css';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
+  const [genres, setGenres] = useState([]);
+
   useEffect(() => {
     getMoviesByPage(1).then(({ results }) => {
       setMovies(results);
     });
   }, []);
+
+  useEffect(() => {
+    getGenres().then(({ genres }) => {
+      setGenres(genres);
+    });
+  }, []);
+
   console.log(movies);
+
   return (
     <Router>
       <div>
@@ -34,6 +45,7 @@ export default function Home() {
                     path={movie.backdrop_path}
                     aboutFilm={movie.overview}
                     releaseDate={movie.release_date}
+                    genre={findGenreName(genres, movie.genre_ids)}
                   />
                 );
               })}

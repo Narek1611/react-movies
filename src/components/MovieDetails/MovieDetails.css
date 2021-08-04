@@ -3,3 +3,80 @@
   background-attachment: fixed;
   background-size: cover;
 }
+.backgroundDetails {
+  position: relative;
+  height: calc(100vh - 72px);
+  opacity: 0.6;
+}
+.backgroundPath {
+  height: 100%;
+}
+.container {
+  max-width: 96% !important;
+  margin-left: 2%;
+  margin-top: 20px;
+  height: calc(100vh - 120px);
+  position: absolute;
+  top: 72px;
+  left: 0;
+  border: 1px solid rgb(255, 255, 255);
+}
+.poster {
+  width: 25% !important;
+  height: 330px;
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  border: 1px solid rgb(109, 93, 93);
+}
+.date {
+  width: 12% !important;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  left: 30px;
+}
+.info {
+  width: 12% !important;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  left: 197px;
+}
+.title {
+  width: 65% !important;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+
+.overview {
+  width: 65% !important;
+  height: 250px;
+  position: absolute;
+  top: 120px;
+  right: 30px;
+  border: 1px dotted rgb(255, 255, 255);
+}
+.rating {
+  width: 21% !important;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  right: 602px;
+}
+.status {
+  width: 21% !important;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  right: 30px;
+}
+.runtime {
+  width: 21% !important;
+  height: 70px;
+  position: absolute;
+  top: 400px;
+  right: 315px;
+}

@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     maxWidth: '63vh',
     margin: '27px',
-    cursor: 'pointer',
     boxShadow: '5px 5px 1px dimgrey',
     border: '1px solid dimgrey',
   },
@@ -31,7 +30,10 @@ export default function RecipeReviewCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardHeader title={props.title} subheader={props.releaseDate} />
+      <Link to={`/${props.id}`}>
+        <CardHeader title={props.title} subheader={props.releaseDate} />
+      </Link>
+
       <Link to={`/${props.id}`}>
         <CardMedia
           className={classes.media}
@@ -41,7 +43,14 @@ export default function RecipeReviewCard(props) {
       </Link>
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {props.aboutFilm}
+          {props.aboutFilm.slice(0, 100)}...
+        </Typography>
+      </CardContent>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {props.genre.map((genre) => {
+            return <span>{genre} </span>;
+          })}
         </Typography>
       </CardContent>
       <CardContent>
