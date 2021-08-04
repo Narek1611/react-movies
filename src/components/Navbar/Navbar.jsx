@@ -12,6 +12,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -149,14 +150,16 @@ export default function PrimarySearchAppBar() {
     <div className={classes.grow}>
       <AppBar position="static" className={classes.navbarColor}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <GroupWorkIcon fontSize="large" />
-          </IconButton>
+          <Link to="/">
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <GroupWorkIcon fontSize="large" />
+            </IconButton>
+          </Link>
           <Typography className={classes.title} variant="h6" noWrap>
             Cinema Nevs
           </Typography>
@@ -175,10 +178,12 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton color="inherit">
-              <p className={classes.loginName}>Favorite</p>
-              <FavoriteIcon />
-            </IconButton>
+            <Link to="/favorite">
+              <IconButton color="inherit">
+                <p className={classes.loginName}>Favorite</p>
+                <FavoriteIcon />
+              </IconButton>
+            </Link>
             <IconButton color="inherit">
               <p className={classes.loginName}>Log In</p>
               <VpnKeyIcon />

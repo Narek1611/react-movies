@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { getImgUrl } from '../../services/services';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,25 +28,25 @@ const useStyles = makeStyles((theme) => ({
 export default function RecipeReviewCard(props) {
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
-      <CardHeader title={props.title} subheader='08-08-1999' />
-      <CardMedia
-        className={classes.media}
-        image={getImgUrl(props.path)}
-        title={props.title}
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton>
-          <FavoriteIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+    <Link to={`/${props.id}`}>
+      <Card className={classes.root}>
+        <CardHeader title={props.title} subheader={props.releaseDate} />
+        <CardMedia
+          className={classes.media}
+          image={getImgUrl(props.path)}
+          title={props.title}
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.aboutFilm}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton>
+            <FavoriteIcon />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </Link>
   );
 }
