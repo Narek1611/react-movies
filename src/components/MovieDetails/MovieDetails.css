@@ -5,7 +5,7 @@
 }
 .backgroundDetails {
   position: relative;
-  height: calc(100vh - 72px);
+  height: 100%;
   opacity: 0.6;
 }
 .backgroundPath {
@@ -15,7 +15,7 @@
   max-width: 96% !important;
   margin-left: 2%;
   margin-top: 20px;
-  height: calc(100vh - 120px);
+  height: 100%;
   position: absolute;
   top: 72px;
   left: 0;
@@ -96,7 +96,7 @@
   padding: 10px;
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (max-width: 1270px) {
   .backgroundDetails {
     height: 1750px;
   }
