@@ -8,7 +8,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import { getImgUrl } from '../../services/services';
+import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 import { Link } from 'react-router-dom';
+import './MovieCard.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,9 +49,16 @@ export default function RecipeReviewCard(props) {
         </Typography>
       </CardContent>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography>
           {props.genre.map((genre) => {
-            return <span>{genre} </span>;
+            return (
+              <ul className="genreNames">
+                {' '}
+                <li>
+                  <LabelImportantIcon /> {genre}
+                </li>{' '}
+              </ul>
+            );
           })}
         </Typography>
       </CardContent>

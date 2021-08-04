@@ -27,8 +27,6 @@ export default function Home() {
     });
   }, []);
 
-  console.log(movies);
-
   return (
     <Router>
       <div>

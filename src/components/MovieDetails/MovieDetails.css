@@ -95,3 +95,112 @@
   border-right: 3px solid rgb(0, 0, 0);
   padding: 10px;
 }
+
+@media screen and (max-width: 1320px) {
+  .backgroundDetails {
+    height: 1750px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vh !important;
+    margin-left: 0;
+    border: none;
+    box-shadow: 0 0 0 rgb(255, 255, 255);
+    text-align: center;
+  }
+  .poster {
+    width: 58vh !important;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+  }
+  .title {
+    width: 90% !important;
+    top: 540px;
+    right: 20px;
+    text-align: center;
+    border-bottom: 5px solid rgb(148, 0, 0);
+    border-left: none;
+    font-size: 25px;
+  }
+  .status {
+    width: 100% !important;
+    top: 620px;
+    right: 10px;
+    text-align: center;
+    border-right: none;
+  }
+  .date {
+    width: 100% !important;
+    top: 690px;
+    left: 0px;
+    text-align: center;
+    border-bottom: 5px dotted rgb(66, 4, 4);
+    border-right: none;
+    border-left: none;
+  }
+  .rating {
+    width: 100% !important;
+    top: 750px;
+    left: 50px;
+    border-right: none;
+    border-left: none;
+  }
+  .info {
+    width: 0% !important;
+    top: 750px;
+    left: 65px;
+    border-right: none;
+  }
+  .runtime {
+    width: 100% !important;
+    top: 790px;
+    right: 0;
+    text-align: center;
+    border-right: none;
+    border-bottom: 3px dotted rgb(133, 0, 0);
+  }
+  .overview {
+    width: 85% !important;
+    top: 870px;
+    text-align: center;
+    height: 800px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .poster {
+    width: 80.5vh !important;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .poster {
+    width: 80.5vh !important;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .poster {
+    width: 80.5vh !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .poster {
+    width: 80.5vh !important;
+  }
+}
+@media screen and (max-width: 425px) {
+  .poster {
+    width: 77.5vh !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .poster {
+    width: 68.5vh !important;
+  }
+}
+@media screen and (max-width: 320px) {
+  .poster {
+    width: 58vh !important;
+  }
+}

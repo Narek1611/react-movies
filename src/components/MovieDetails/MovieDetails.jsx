@@ -18,7 +18,6 @@ export default function MovieDetail() {
     });
   }, [id]);
 
-  console.log(movieDetail);
   return movieDetail.length === 0 ? (
     <Box className="backgroundLoading">
       <Loading />
