@@ -20,7 +20,7 @@
   top: 72px;
   left: 0;
   border: 1px solid rgb(255, 255, 255);
-  box-shadow: 0 0 50px whitesmoke;
+  box-shadow: 0 0 50px magenta;
 }
 .poster {
   width: 25% !important;
@@ -39,8 +39,6 @@
   border-right: 3px solid rgb(0, 0, 0);
   border-left: 3px solid rgb(0, 0, 0);
   padding: 10px;
-
-
 }
 .info {
   width: 12% !important;
@@ -50,8 +48,6 @@
   left: 197px;
   border-right: 3px solid rgb(0, 0, 0);
   padding: 10px;
-
-
 }
 .title {
   width: 65% !important;

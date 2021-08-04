@@ -4,6 +4,7 @@ import { getImgUrl, getMovieById } from '../../services/services';
 import Loading from '../Loading/Loading';
 import StarsIcon from '@material-ui/icons/Stars';
 import Box from '@material-ui/core/Box';
+import LanguageTwoToneIcon from '@material-ui/icons/LanguageTwoTone';
 import MovieFilterTwoToneIcon from '@material-ui/icons/MovieFilterTwoTone';
 import './MovieDetails.css';
 
@@ -62,7 +63,10 @@ export default function MovieDetail() {
         </Box>
         <Box className="runtime">
           {movieDetail.runtime} minute ,
-          <span>{movieDetail.original_language}</span>
+          <span>
+            {' '}
+            <LanguageTwoToneIcon /> {movieDetail.original_language}
+          </span>
         </Box>
       </Box>
     </Box>
