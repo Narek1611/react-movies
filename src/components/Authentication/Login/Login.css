@@ -1,0 +1,6 @@
+.backgroundLogin {
+  background: url('../../../assets/images/login.jpg');
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
