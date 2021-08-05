@@ -10,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
 import './Login.css';
 
 const validationSchema = yup.object({
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LogIn() {
   const classes = useStyles();
+  let history = useHistory();
 
   const formik = useFormik({
     initialValues: {
@@ -68,8 +70,8 @@ export default function LogIn() {
       password: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: () => {
+      history.push('/');
     },
   });
 
