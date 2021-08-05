@@ -10,6 +10,7 @@ import Login from '../Authentication/Login/Login';
 import MovieDetail from '../MovieDetails/MovieDetails';
 import { findGenreName } from '../../helpers/findGenreName';
 import './Home.css';
+import { Redirect } from 'react-router';
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
@@ -30,9 +31,9 @@ export default function Home() {
   return (
     <Router>
       <div>
-        <Navbar />
         <Switch>
           <Route exact path="/">
+            <Navbar />
             <Box display="flex" flexWrap="wrap" className="backgroundHome">
               {movies.map((movie) => {
                 return (
@@ -50,13 +51,18 @@ export default function Home() {
             </Box>
           </Route>
           <Route path="/favorite">
+            <Navbar />
             <Favorite />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/:id" children={<MovieDetail />}></Route>
+          <Route path="/:id">
+            <Navbar />
+            <MovieDetail />
+          </Route>
         </Switch>
+        <Redirect from="/" to="/login" />
       </div>
     </Router>
   );

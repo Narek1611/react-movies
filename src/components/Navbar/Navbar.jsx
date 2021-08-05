@@ -10,8 +10,8 @@ import { Typography } from '@material-ui/core';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import SearchIcon from '@material-ui/icons/Search';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -141,7 +141,7 @@ export default function PrimarySearchAppBar() {
       <Link to="/login">
         <MenuItem>
           <IconButton color="inherit">
-            <VpnKeyIcon />
+            <ExitToAppIcon />
           </IconButton>
           <p>Log In</p>
         </MenuItem>
@@ -163,10 +163,10 @@ export default function PrimarySearchAppBar() {
               <GroupWorkIcon fontSize="large" />
             </IconButton>
           </Link>
-          <Link to='/'>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Cinema Nevs
-          </Typography>
+          <Link to="/">
+            <Typography className={classes.title} variant="h6" noWrap>
+              Cinema Nevs
+            </Typography>
           </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -191,8 +191,8 @@ export default function PrimarySearchAppBar() {
             </Link>
             <Link to="/login">
               <IconButton color="inherit">
-                <p className={classes.loginName}>Log In</p>
-                <VpnKeyIcon />
+                <p className={classes.loginName}>Log Out</p>
+                <ExitToAppIcon />
               </IconButton>
             </Link>
           </div>
