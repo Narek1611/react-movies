@@ -35,7 +35,6 @@ export default function RecipeReviewCard(props) {
       <Link to={`/${props.id}`}>
         <CardHeader title={props.title} subheader={props.releaseDate} />
       </Link>
-
       <Link to={`/${props.id}`}>
         <CardMedia
           className={classes.media}
@@ -50,9 +49,9 @@ export default function RecipeReviewCard(props) {
       </CardContent>
       <CardContent>
         <Typography>
-          {props.genre.map((genre) => {
+          {props.genre.map((genre, index) => {
             return (
-              <ul className="genreNames">
+              <ul key={index} className="genreNames">
                 {' '}
                 <li>
                   <LabelImportantIcon /> {genre}
