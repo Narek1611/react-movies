@@ -3,15 +3,16 @@ import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useFormik } from 'formik';
-import * as yup from 'yup';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, Link, Redirect } from 'react-router-dom';
 import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
+import { validationSignUp } from '../../helpers/formValidation';
+import { Routes } from '../../constants/routes';
+import { Box } from '@material-ui/core';
 
 function Copyright() {
   return (
@@ -33,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
   form: {
     width: '100%',
     marginTop: theme.spacing(3),
@@ -42,26 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const validationSignUp = yup.object({
-  email: yup
-    .string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required'),
-  password: yup
-    .string('Enter your password')
-    .min(7, 'Password should be of minimum 7 characters length')
-    .required('Password is required'),
-  firstName: yup
-    .string('Enter your firstName')
-    .min(3, 'Firstname should be of minimum 3 characters length')
-    .required('Firstname is required'),
-  lastName: yup
-    .string('Enter your lastName')
-    .min(3, 'Lastname should be of minimum 3 characters length')
-    .required('Lastname is required'),
-});
-
-export default function Register() {
+export default function SignUp() {
   const classes = useStyles();
   let history = useHistory();
 
@@ -86,7 +72,9 @@ export default function Register() {
     },
   });
 
-  return (
+  return getLocalStorage(storage.isAuth) ? (
+    <Redirect to={Routes.home.url} />
+  ) : (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
