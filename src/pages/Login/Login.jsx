@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,10 +10,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
-import * as yup from 'yup';
 import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';
+import { validationLogin } from '../../helpers/formValidation';
+import { isUserValid } from '../../helpers/genre';
+import SignInError from '../../components/Errors/SignInError';
 
 function Copyright() {
   return (
@@ -44,18 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const validationSchema = yup.object({
-  email: yup
-    .string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required'),
-  password: yup
-    .string('Enter your password')
-    .min(7, 'Password should be of minimum 7 characters length')
-    .required('Password is required'),
-});
-
 export default function Login() {
+  const [errorSignUp, setErrorSignUp] = useState(false);
+  const [errorPassEmail, setErrorPassEmail] = useState(false);
+
   const classes = useStyles();
 
   let history = useHistory();
@@ -65,20 +59,20 @@ export default function Login() {
       email: '',
       password: '',
     },
-    validationSchema: validationSchema,
+    validationSchema: validationLogin,
     onSubmit: (values) => {
-      if (
-        getLocalStorage(storage.users) &&
-        getLocalStorage(storage.users).some(
-          (user) =>
-            user.email === values.email && user.password === values.password
-        )
-      ) {
-        setLocalStorage(storage.isAuth, true);
-        history.push(Routes.home.url);
+      const users = getLocalStorage(storage.users);
+      if (users) {
+        setErrorSignUp(!errorSignUp);
+        if (isUserValid(users, values)) {
+          setLocalStorage(storage.isAuth, true);
+          history.push(`${Routes.homePage.url}`);
+          setErrorPassEmail(!errorPassEmail);
+        } else {
+          setErrorPassEmail(!errorPassEmail);
+        }
       } else {
-        setLocalStorage(storage.isAuth, false);
-        alert('Wrong email or password');
+        setErrorSignUp(!errorSignUp);
       }
     },
   });
@@ -93,7 +87,7 @@ export default function Login() {
           - Welcome to our website -
         </Typography>
         <Typography component="h4" variant="h3">
-        Sign up and find out more about your favorite films right here:
+          Sign up and find out more about your favorite films right here:
         </Typography>
         <Typography component="h2" variant="h4">
           Log In
@@ -131,6 +125,13 @@ export default function Login() {
             error={formik.touched.password && Boolean(formik.errors.password)}
             helperText={formik.touched.password && formik.errors.password}
           />
+
+          {errorPassEmail ? (
+            <SignInError message={'Wrong password or Email'} />
+          ) : errorSignUp ? (
+            <SignInError message={'Please Sign Up'} />
+          ) : null}
+
           <Button
             type="submit"
             fullWidth
