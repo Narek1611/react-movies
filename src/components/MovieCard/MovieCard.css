@@ -1,8 +1,0 @@
-.genreNames{
-    border: 1px double black;
-    cursor: pointer;
-}
-.genreNames:hover{
-    transform: scale(1.02);
-    background-color: tomato;
-}
