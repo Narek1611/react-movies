@@ -9,11 +9,17 @@ import { Routes } from '../../constants/routes';
 import { getLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 
+const initialFavCount = getLocalStorage(storage.favorites)
+  ? getLocalStorage(storage.favorites).length
+  : 0;
+
 export default function Home() {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(1);
+  const [favCount, setFavCount] = useState(initialFavCount);
+
   const isAuth = getLocalStorage(storage.isAuth);
 
   const handleSearchInput = (e) => {
@@ -47,7 +53,7 @@ export default function Home() {
   }, [searchQuery]);
   return isAuth ? (
     <>
-      <Header handleSearchInput={handleSearchInput} />
+      <Header handleSearchInput={handleSearchInput} favCount={favCount} />
       <Switch>
         <Route exact path={Routes.home.url}>
           <Movies
@@ -55,11 +61,12 @@ export default function Home() {
             isAuth={isAuth}
             loading={loading}
             movies={movies}
+            setFavCount={setFavCount}
           />
         </Route>
 
         <Route path="/home/favorites">
-          <Favorite isAuth={isAuth} />
+          <Favorite setFavCount={setFavCount} isAuth={isAuth} />
         </Route>
 
         <Route path="/home/:id">
