@@ -66,7 +66,7 @@ export default function Login() {
         setErrorSignUp(!errorSignUp);
         if (isUserValid(users, values)) {
           setLocalStorage(storage.isAuth, true);
-          history.push(`${Routes.homePage.url}`);
+          history.push(`${Routes.home.url}`);
           setErrorPassEmail(!errorPassEmail);
         } else {
           setErrorPassEmail(!errorPassEmail);
