@@ -10,10 +10,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';
 import { validationLogin } from '../../helpers/formValidation';
+import PanToolTwoToneIcon from '@material-ui/icons/PanToolTwoTone';
 import { isUserValid } from '../../helpers/genre';
 import SignInError from '../../components/Errors/SignInError';
 
@@ -22,7 +24,7 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <a color="inherit" href="https://github.com/KarlenNersisyan">
-        {"KarlenNersisyan-GitHub"}
+        {'KarlenNersisyan-GitHub'}
       </a>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -32,7 +34,7 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -83,11 +85,15 @@ export default function Login() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Typography component="h1" variant="h5">
-          - Welcome to our website -
+        <Typography component="h5" variant="h5">
+          <PanToolTwoToneIcon /> Welcome to our website
         </Typography>
-        <Typography component="h4" variant="h3">
-          Sign up and find out more about your favorite films right here:
+        <Typography component="h6" variant="h6">
+          Sign up and find out more about your favorite films right{' '}
+          <Link to="/register">
+            <ArrowForwardIcon /> here
+          </Link>
+          :
         </Typography>
         <Typography component="h2" variant="h4">
           Log In
@@ -141,7 +147,7 @@ export default function Login() {
           >
             Submit
           </Button>
-          <Grid container>
+          <Grid>
             <Grid item>
               <Link variant="body2" to="/register">
                 Don't have an account? Register
@@ -150,7 +156,7 @@ export default function Login() {
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
+      <Box mt={2}>
         <Copyright />
       </Box>
     </Container>

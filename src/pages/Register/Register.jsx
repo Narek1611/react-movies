@@ -161,14 +161,14 @@ export default function SignUp() {
           >
             Submit
           </Button>
-          <Grid container justifyContent="flex-end">
+          <Grid>
             <Grid item>
               <Link to="/">Already have an account? Log In</Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
+      <Box mt={2}>
         <Copyright />
       </Box>
     </Container>
