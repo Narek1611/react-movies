@@ -3,10 +3,12 @@ import Login from './pages/Login/Login';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Favorite from './pages/Favorite/Favorite';
 import Register from './pages/Register/Register';
+import { getLocalStorage } from './helpers/localStorage';
+import { storage } from './constants/storage';
 
 export default function App() {
-  const isAuth = localStorage.getItem('isAuth');
-  
+  const isAuth = getLocalStorage(storage.isAuth);
+
   return (
     <Router>
       <Switch>
