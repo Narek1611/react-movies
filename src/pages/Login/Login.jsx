@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -36,10 +35,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
   form: {
     width: '100%',
     marginTop: theme.spacing(1),
@@ -56,7 +51,7 @@ const validationSchema = yup.object({
     .required('Email is required'),
   password: yup
     .string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
+    .min(7, 'Password should be of minimum 7 characters length')
     .required('Password is required'),
 });
 
@@ -94,9 +89,14 @@ export default function Login() {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}></Avatar>
         <Typography component="h1" variant="h5">
-          Register
+          - Welcome to our website -
+        </Typography>
+        <Typography component="h4" variant="h3">
+        Sign up and find out more about your favorite films right here:
+        </Typography>
+        <Typography component="h2" variant="h4">
+          Log In
         </Typography>
         <form
           onSubmit={formik.handleSubmit}
