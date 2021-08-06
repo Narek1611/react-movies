@@ -1,4 +1,4 @@
-# Movie App — Cinema News
+# Movie App -> Cinema-News
 
 ![Cinema-News](./src/assets/readme/cinemaBackground.jpg)
 
