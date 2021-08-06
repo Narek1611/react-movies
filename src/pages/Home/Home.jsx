@@ -51,6 +51,7 @@ export default function Home() {
       });
     }
   }, [searchQuery]);
+
   return isAuth ? (
     <>
       <Header handleSearchInput={handleSearchInput} favCount={favCount} />
