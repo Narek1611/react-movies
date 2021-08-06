@@ -21,10 +21,7 @@ const validationSchema = yup.object({
   password: yup
     .string('Enter your password')
     .required('Password is required')
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-      'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character'
-    ),
+    .min(8, 'Password should be of minimum 8 characters length'),
 });
 
 function Copyright() {
