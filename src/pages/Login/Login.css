@@ -1,0 +1,17 @@
+.loginBackground {
+  background-image: url('../../assets/images/loginBackground.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.icon {
+  color: rgb(194, 160, 97);
+}
+
+.textP {
+  border-bottom: 3px solid green;
+}
+
+.textHere {
+  border-bottom: 1px solid rgb(128, 5, 5);
+}

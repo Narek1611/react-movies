@@ -10,7 +10,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';
@@ -18,6 +17,7 @@ import { validationLogin } from '../../helpers/formValidation';
 import PanToolTwoToneIcon from '@material-ui/icons/PanToolTwoTone';
 import { isUserValid } from '../../helpers/genre';
 import SignInError from '../../components/Errors/SignInError';
+import './Login.css';
 
 function Copyright() {
   return (
@@ -34,7 +34,7 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(2),
+    paddingTop: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -82,83 +82,86 @@ export default function Login() {
   return getLocalStorage(storage.isAuth) ? (
     <Redirect to={Routes.home.url} />
   ) : (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Typography component="h5" variant="h5">
-          <PanToolTwoToneIcon /> Welcome to our website
-        </Typography>
-        <Typography component="h6" variant="h6">
-          Sign up and find out more about your favorite films right{' '}
-          <Link to="/register">
-            <ArrowForwardIcon /> here
-          </Link>
-          :
-        </Typography>
-        <Typography component="h2" variant="h4">
-          Log In
-        </Typography>
-        <form
-          onSubmit={formik.handleSubmit}
-          className={classes.form}
-          noValidate
-        >
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoFocus
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-          />
-
-          {errorPassEmail ? (
-            <SignInError message={'Wrong password or Email'} />
-          ) : errorSignUp ? (
-            <SignInError message={'Please Sign Up'} />
-          ) : null}
-
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
+    <Box className="loginBackground">
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Typography component="h5" variant="h5" className="textP" >
+            <PanToolTwoToneIcon className="icon" />
+            Welcome to our website.
+          </Typography>
+          <Typography component="h6" variant="h6">
+            Sign up and find out more about your favorite films right{' '}
+            <Link className="textHere" to="/register">
+               here
+            </Link>
+            :
+          </Typography>
+          <Typography component="h2" variant="h4">
+            Log In
+          </Typography>
+          <form
+            onSubmit={formik.handleSubmit}
+            className={classes.form}
+            noValidate
           >
-            Submit
-          </Button>
-          <Grid>
-            <Grid item>
-              <Link variant="body2" to="/register">
-                Don't have an account? Register
-              </Link>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoFocus
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              helperText={formik.touched.password && formik.errors.password}
+            />
+
+            {errorPassEmail ? (
+              <SignInError message={'Wrong password or Email'} />
+            ) : errorSignUp ? (
+              <SignInError message={'Please Sign Up'} />
+            ) : null}
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
+              Submit
+            </Button>
+            <Grid>
+              <Grid item>
+                <Link variant="body2" to="/register">
+                  Don't have an account? Register
+                </Link>
+              </Grid>
             </Grid>
-          </Grid>
-        </form>
-      </div>
-      <Box mt={2}>
-        <Copyright />
-      </Box>
-    </Container>
+          </form>
+        </div>
+        <Box mt={2}>
+          <Copyright />
+        </Box>
+      </Container>
+    </Box>
   );
 }
