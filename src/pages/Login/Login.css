@@ -2,6 +2,7 @@
   background-image: url('../../assets/images/loginBackground.png');
   background-size: cover;
   background-attachment: fixed;
+  height: 100vh;
 }
 
 .icon {
