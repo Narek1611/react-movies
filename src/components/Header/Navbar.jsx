@@ -1,27 +1,31 @@
 import React from 'react';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Badge, Button } from '@material-ui/core';
+import Badge from '@material-ui/core/Badge';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import SearchIcon from '@material-ui/icons/Search';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 import { Link } from 'react-router-dom';
-import HomeIcon from '@material-ui/icons/Home';
 import { removeFromLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  grow: {
     flexGrow: 1,
   },
   menuButton: {
     marginRight: theme.spacing(2),
   },
   title: {
-    flexGrow: 1,
     display: 'none',
+    color: 'white',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -33,10 +37,11 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
+    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+      marginLeft: theme.spacing(3),
       width: 'auto',
     },
   },
@@ -57,35 +62,24 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
     },
   },
-
-  logout: {
-    color: 'white',
-    margin: '10px',
-    backgroundColor: '#0049A2',
-  },
-
-  favButton: {
-    color: 'white',
-    backgroundColor: 'orange',
-    '&:hover': {
-      color: 'white',
-      backgroundColor: 'darkorange',
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
     },
   },
-
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
   homeIcon: {
-    transition: '0.4s',
-    color: 'white',
-    '&:hover': {
-      color: '#FFA500',
-    },
+    fontSize: '50px',
   },
 }));
 
@@ -97,16 +91,29 @@ export default function Navbar({ handleSearchInput, favCount }) {
   }
 
   return (
-    <div className={classes.root}>
+    <div className={classes.grow}>
       <AppBar position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            <Link to={Routes.home.url}>
-              <HomeIcon className={classes.homeIcon} fontSize="large" />
-            </Link>
-          </Typography>
+          <Link to={Routes.home.url}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <GroupWorkIcon color="secondary" className={classes.homeIcon} />
+            </IconButton>
+          </Link>
+          <Link className={classes.title} to={Routes.home.url}>
+            <Typography variant="overline" noWrap>
+              Cinema-News
+            </Typography>
+          </Link>
+          <div className={classes.grow} />
           <div className={classes.search}>
-            <div className={classes.searchIcon}></div>
+            <div className={classes.searchIcon}>
+              <SearchIcon color="primary" />
+            </div>
             <InputBase
               placeholder="Search…"
               classes={{
@@ -117,16 +124,26 @@ export default function Navbar({ handleSearchInput, favCount }) {
               onChange={handleSearchInput}
             />
           </div>
-          <Link to={Routes.login.url}>
-            <Button onClick={deleteIsAuth} className={classes.logout}>
-              Log Out
-            </Button>
-          </Link>
-          <Link to={Routes.favorite.url}>
-            <Badge color="secondary" badgeContent={favCount} max={10}>
-              <Button className={classes.favButton}>Favorite</Button>
-            </Badge>
-          </Link>
+          <div className={classes.grow} />
+          <div className={classes.sectionDesktop}>
+            <Link className={classes.title} to={Routes.favorite.url}>
+              <IconButton color="inherit">
+                <Badge color="secondary" badgeContent={favCount} max={10}>
+                  <FavoriteIcon color="secondary" />
+                </Badge>
+                <Typography variant="overline">Favorites</Typography>
+              </IconButton>
+            </Link>
+
+            <Link className={classes.title} to={Routes.login.url}>
+              <IconButton onClick={deleteIsAuth} color="inherit">
+                <Badge>
+                  <ExitToAppIcon color="secondary" />
+                </Badge>
+                <Typography variant="overline">Log Out</Typography>
+              </IconButton>
+            </Link>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
