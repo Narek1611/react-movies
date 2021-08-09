@@ -19,13 +19,26 @@ export default function MovieDetails() {
   }, []);
 
   return (
-    <>
+    <section className="wrapper">
       {loading ? (
-        <div className="loadContainer">
-          <Loader size={80} />
-        </div>
+        <Loader />
       ) : (
-        <div className="page">
+        <div className='containerGeneral'>
+          <img src={getImgUrl(movieDetails.backdrop_path)} className='img'/>
+        </div>
+      )}
+    </section>
+  );
+}
+
+
+
+
+
+
+
+
+{/* <div className="page">
           <img
             className="backgroundDetails"
             src={getImgUrl(movieDetails.backdrop_path)}
@@ -57,8 +70,4 @@ export default function MovieDetails() {
             </div>
             <div className="runtime">{movieDetails.runtime} mins</div>
           </div>
-        </div>
-      )}
-    </>
-  );
-}
+        </div> */}
