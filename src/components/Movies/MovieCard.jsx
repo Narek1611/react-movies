@@ -107,8 +107,8 @@ export default function MovieCard({
         />
       </Link>
       <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          <p>{description.slice(0, 70)}...</p>
+        <Typography variant="body2" color="textSecondary" component="section">
+          <section>{description.slice(0, 70)}...</section>
         </Typography>
         <ul>
           {genres.map((genre, idx) => {

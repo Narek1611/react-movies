@@ -22,6 +22,8 @@ export default function Favorite({ isAuth, setFavCount }) {
             <MovieCard
               setFavCount={setFavCount}
               key={movie.id}
+              date={movie.date}
+              description={movie.description}
               title={movie.title}
               imgPath={movie.imgPath}
               genres={movie.genres}
