@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 3,
   },
   backTopFab: {
-    width: '80px',
-    height: '80px',
+    width: '50px',
+    height: '50px',
   },
 }));
 

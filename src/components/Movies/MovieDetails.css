@@ -156,81 +156,303 @@
   box-shadow: 0 0 50px whitesmoke;
 }
 
-/* .page {
-  position: relative;
-  font-weight: 800;
-  font-size: medium;
-  height: 100%;
-}
-.backgroundDetails {
-  position: relative;
-  opacity: 0.6;
-}
-.backgroundPath {
-  height: 100%;
-}
-.poster {
-  width: 25% !important;
-  height: 330px;
-  position: absolute;
-  top: 40px;
-  left: 30px;
-  border: 1px solid rgb(109, 93, 93);
-}
-.date {
-  width: 12% !important;
-  height: 70px;
-  position: absolute;
-  top: 400px;
-  left: 100px;
-}
-.info {
-  width: 12% !important;
-  height: 70px;
-  position: absolute;
-  top: 400px;
-}
-.title {
-  width: 65% !important;
-  height: 50px;
-  position: absolute;
-  top: 40px;
-  right: 30px;
-  letter-spacing: 10px;
-  font-size: x-large;
+@media screen and (max-width: 2560px) {
+  .wrapper {
+    height: 110vh;
+  }
+
+  .imgBackground {
+    height: 110vh;
+  }
 }
 
-.overview {
-  width: 65% !important;
-  height: 250px;
-  position: absolute;
-  top: 120px;
-  right: 30px;
-  border: 1px dotted rgb(255, 255, 255);
-  letter-spacing: 2px;
-  padding: 10px 0;
+@media screen and (max-width: 1330px) {
+  .wrapper {
+    height: 100%;
+  }
+
+  .imgBackground {
+    height: 235vh;
+    object-fit: fill;
+  }
+
+  .backgroundPath {
+    left: 10%;
+    width: 80%;
+    top: 85px;
+    object-fit: contain;
+    height: 100vh;
+    border: none;
+  }
+
+  .status {
+    top: 625px;
+    left: 90px;
+  }
+
+  .date {
+    top: 590px;
+    left: 80px;
+    border-left: 3px solid black;
+  }
+
+  .title {
+    width: 200px;
+    top: 85px;
+    font-size: 23px;
+    left: 60px;
+    text-align: center;
+  }
+
+  .overview {
+    width: 250px;
+    top: 905px;
+    font-size: 10px;
+    left: 43px;
+  }
+
+  .borderStyleOverview {
+    width: 0;
+    border-bottom: none;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 whitesmoke;
+  }
+
+  .rating {
+    width: 140px;
+    top: 820px;
+    left: 90px;
+    font-size: 40px;
+  }
+
+  .runtime {
+    width: 100px;
+    border: none;
+    top: 790px;
+    left: 109px;
+    font-size: 15px;
+  }
+
+  .tagline {
+    width: 70px;
+    border: none;
+    border-top: 3px solid black;
+    top: 680px;
+    left: 127px;
+  }
+
+  .borderBottom {
+    width: 0;
+    border-bottom: none;
+    top: 0;
+    left: 0;
+  }
+
+  .githubIcon {
+    top: 1200px;
+    left: 85px;
+  }
+
+  .border {
+    width: 0;
+    border-bottom: none;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 whitesmoke;
+  }
+
+  .borderStyle {
+    width: 0;
+    border-bottom: none;
+    top: 0;
+    left: 0;
+  }
 }
-.rating {
-  width: 21% !important;
-  height: 70px;
-  position: absolute;
-  top: 400px;
-  right: 400px;
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding-top: 10px;
+  }
+
+  .imgBackground {
+    height: 255vh;
+  }
+
+  .status {
+    top: 725px;
+    left: 440px;
+  }
+
+  .date {
+    top: 680px;
+    left: 430px;
+    border-left: 3px solid black;
+  }
+
+  .title {
+    top: 600px;
+    left: 420px;
+  }
+
+  .overview {
+    top: 1000px;
+    left: 385px;
+  }
+
+  .rating {
+    top: 910px;
+    left: 440px;
+  }
+
+  .runtime {
+    top: 875px;
+    left: 459px;
+  }
+
+  .tagline {
+    top: 780px;
+    left: 475px;
+  }
+
+  .githubIcon {
+    top: 1300px;
+    left: 430px;
+  }
 }
-.status {
-  width: 34% !important;
-  height: 70px;
-  position: absolute;
-  top: 400px;
-  right: 30px;
+
+@media screen and (max-width: 768px) {
+  .status {
+    left: 326px;
+  }
+
+  .date {
+    left: 317px;
+  }
+
+  .title {
+    left: 295px;
+  }
+
+  .overview {
+    left: 283px;
+  }
+
+  .rating {
+    left: 328px;
+  }
+
+  .runtime {
+    left: 348px;
+  }
+
+  .tagline {
+    left: 365px;
+  }
+
+  .githubIcon {
+    left: 330px;
+  }
 }
-.runtime {
-  width: 21% !important;
-  height: 70px;
-  position: absolute;
-  top: 400px;
-  right: 315px;
+
+@media screen and (max-width: 425px) {
+  .status {
+    left: 144px;
+  }
+
+  .date {
+    left: 134px;
+  }
+
+  .title {
+    left: 116px;
+  }
+
+  .overview {
+    left: 100px;
+  }
+
+  .rating {
+    left: 144px;
+  }
+
+  .runtime {
+    left: 157px;
+  }
+
+  .tagline {
+    left: 178px;
+  }
+
+  .githubIcon {
+    left: 147px;
+  }
 }
-.icon {
-  color: red;
-} */
+
+@media screen and (max-width: 375px) {
+  .status {
+    left: 136px;
+  }
+
+  .date {
+    left: 126px;
+  }
+
+  .title {
+    left: 108px;
+  }
+
+  .overview {
+    left: 92px;
+  }
+
+  .rating {
+    left: 136px;
+  }
+
+  .runtime {
+    left: 149px;
+  }
+
+  .tagline {
+    left: 170px;
+  }
+
+  .githubIcon {
+    left: 139px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .status {
+    left: 93px;
+  }
+
+  .date {
+    left: 82px;
+  }
+
+  .title {
+    left: 61px;
+  }
+
+  .overview {
+    left: 44px;
+  }
+
+  .rating {
+    left: 94px;
+  }
+
+  .runtime {
+    left: 112px;
+  }
+
+  .tagline {
+    left: 130px;
+  }
+
+  .githubIcon {
+    left: 85px;
+  }
+}

@@ -30,6 +30,28 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
   },
+  titleLogOut: {
+    display: 'none',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block',
+      width: '145px',
+    },
+  },
+  titleMenu: {
+    display: 'block',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+  titleFavorite: {
+    display: 'block',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
@@ -68,13 +90,13 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionDesktop: {
     display: 'none',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'flex',
     },
   },
   sectionMobile: {
     display: 'flex',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
   },
@@ -134,13 +156,28 @@ export default function Navbar({ handleSearchInput, favCount }) {
                 <Typography variant="overline">Favorites</Typography>
               </IconButton>
             </Link>
-
-            <Link className={classes.title} to={Routes.login.url}>
+            <Link className={classes.titleLogOut} to={Routes.login.url}>
               <IconButton onClick={deleteIsAuth} color="inherit">
                 <Badge>
                   <ExitToAppIcon color="secondary" />
                 </Badge>
                 <Typography variant="overline">Log Out</Typography>
+              </IconButton>
+            </Link>
+          </div>
+          <div className={classes.sectionMobile}>
+            <Link className={classes.titleFavorite} to={Routes.favorite.url}>
+              <IconButton color="inherit">
+                <Badge color="secondary" badgeContent={favCount} max={10}>
+                  <FavoriteIcon color="secondary" />
+                </Badge>
+              </IconButton>
+            </Link>
+            <Link className={classes.titleMenu} to={Routes.login.url}>
+              <IconButton onClick={deleteIsAuth} color="inherit">
+                <Badge>
+                  <ExitToAppIcon color="secondary" />
+                </Badge>
               </IconButton>
             </Link>
           </div>

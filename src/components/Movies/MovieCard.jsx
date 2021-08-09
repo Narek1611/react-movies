@@ -90,6 +90,7 @@ export default function MovieCard({
       setFavCount((prevFavCount) => prevFavCount + 1);
     }
   };
+
   return (
     <Card className={classes.root}>
       <Link to={`${Routes.home.url}${id}`}>
@@ -111,16 +112,15 @@ export default function MovieCard({
           <section>{description.slice(0, 70)}...</section>
         </Typography>
         <ul>
-          {genres.map((genre, idx) => {
+          {genres.map((genre, index) => {
             return (
               <a
                 href="https://github.com/KarlenNersisyan"
                 target="_blank"
                 rel="noreferrer"
+                key={index}
               >
-                <li className="genreName" key={idx}>
-                  {genre}
-                </li>
+                <li className="genreName">{genre}</li>
               </a>
             );
           })}
@@ -147,7 +147,6 @@ export default function MovieCard({
 
 MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
-  imgPath: PropTypes.string.isRequired,
   genres: PropTypes.array.isRequired,
   id: PropTypes.number.isRequired,
 };

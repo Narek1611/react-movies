@@ -8,3 +8,9 @@
 .textM {
   color: white;
 }
+
+@media screen and (max-width: 1330px) {
+  .registerBackground {
+    height: 135vh;
+  }
+}
