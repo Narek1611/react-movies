@@ -37,7 +37,9 @@ export default function Movies({ loading, movies, setOffset, setFavCount }) {
       {loading ? (
         <Loader />
       ) : !movies.length ? (
-        <h2>No Such Film</h2>
+        <div className="searchBackground">
+          <h1>No Such Film</h1>
+        </div>
       ) : (
         movies.map((movie) => {
           return (

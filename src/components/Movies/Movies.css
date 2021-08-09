@@ -7,3 +7,19 @@
   background-attachment: fixed;
   background-size: cover;
 }
+
+.searchBackground {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  line-height: 50vh;
+  background-image: url('../../assets/images/loading.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.searchBackground h1 {
+  color: red;
+  font-size: 70px;
+}
