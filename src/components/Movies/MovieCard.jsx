@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import CardHeader from '@material-ui/core/CardHeader';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { getImgUrl } from '../../services/services';
 import { Link } from 'react-router-dom';
@@ -13,37 +13,49 @@ import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import Chip from '@material-ui/core/Chip';
 import PropTypes from 'prop-types';
 import { Routes } from '../../constants/routes';
+import './MovieCard.css';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 245,
-    marginBottom: 70,
-    marginTop: 10,
-    zIndex: 2,
-    marginRight: 10,
-    marginLeft: 10,
-    backgroundColor: '#FAFAFA',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    maxWidth: '47vh',
+    margin: '20px',
+    border: '1px solid dimgrey',
+    borderRadius: '20px',
+  },
+
+  titleName: {
+    color: 'blue',
   },
 
   favBtn: {
     padding: 0,
   },
 
-  genreName: {
-    margin: 2,
-  },
-
   movieTitle: {
     textAlign: 'center',
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%',
   },
 });
 
 let favorites = [];
 
-export default function MovieCard({ title, imgPath, genres, id, setFavCount }) {
+export default function MovieCard({
+  title,
+  date,
+  description,
+  imgPath,
+  genres,
+  id,
+  setFavCount,
+}) {
   favorites = getLocalStorage(storage.favorites)
     ? getLocalStorage(storage.favorites)
     : [];
@@ -58,6 +70,8 @@ export default function MovieCard({ title, imgPath, genres, id, setFavCount }) {
     setIsFavorite(!isFavorite);
     const movieInfo = {
       title,
+      date,
+      description,
       imgPath,
       genres,
       id,
@@ -79,55 +93,47 @@ export default function MovieCard({ title, imgPath, genres, id, setFavCount }) {
   return (
     <Card className={classes.root}>
       <Link to={`${Routes.home.url}${id}`}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="Contemplative Reptile"
-            height="350"
-            image={getImgUrl(imgPath)}
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography
-              className={classes.movieTitle}
-              variant="h6"
-              color="textPrimary"
-              component="p"
-            >
-              {title}
-            </Typography>
-            <div style={{ width: '100%' }}>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {genres.map((genre, idx) => {
-                  return (
-                    <Chip
-                      className={classes.genreName}
-                      key={idx}
-                      variant="outlined"
-                      color="primary"
-                      label={genre}
-                      size="small"
-                    />
-                  );
-                })}
-              </Typography>
-            </div>
-          </CardContent>
-        </CardActionArea>
+        <CardHeader
+          title={title}
+          subheader={date}
+          className={classes.titleName}
+        />
       </Link>
-      <CardActions>
-        <Button
+      <Link to={`${Routes.home.url}${id}`}>
+        <CardMedia
+          className={classes.media}
+          image={getImgUrl(imgPath)}
+          title={title}
+        />
+      </Link>
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          <p>{description.slice(0, 70)}...</p>
+        </Typography>
+        <ul>
+          {genres.map((genre, idx) => {
+            return (
+              <li className="genreName" key={idx}>
+                {genre}
+              </li>
+            );
+          })}
+        </ul>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton
           className={classes.favBtn}
           size="small"
           color="primary"
           onClick={handleFavIconToggle}
+          aria-label="add to favorites"
         >
           {isFavorite ? (
-            <FavoriteIcon style={{ color: 'orange' }} />
+            <FavoriteIcon style={{ color: 'red' }} />
           ) : (
             <FavoriteBorderIcon />
           )}
-        </Button>
+        </IconButton>
       </CardActions>
     </Card>
   );

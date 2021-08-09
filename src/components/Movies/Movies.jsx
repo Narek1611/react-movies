@@ -46,7 +46,8 @@ export default function Movies({ loading, movies, setOffset, setFavCount }) {
               id={movie.id}
               title={movie.title}
               description={movie.overview}
-              imgPath={movie.poster_path}
+              date={movie.release_date}
+              imgPath={movie.backdrop_path}
               genres={genres ? findGenreName(genres, movie.genre_ids) : []}
               favorites={[]}
               setFavCount={setFavCount}
