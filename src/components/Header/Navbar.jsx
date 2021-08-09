@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -10,7 +11,6 @@ import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import SearchIcon from '@material-ui/icons/Search';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import { Link } from 'react-router-dom';
 import { removeFromLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';

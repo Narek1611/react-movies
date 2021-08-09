@@ -113,9 +113,15 @@ export default function MovieCard({
         <ul>
           {genres.map((genre, idx) => {
             return (
-              <li className="genreName" key={idx}>
-                {genre}
-              </li>
+              <a
+                href="https://github.com/KarlenNersisyan"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <li className="genreName" key={idx}>
+                  {genre}
+                </li>
+              </a>
             );
           })}
         </ul>
