@@ -3,3 +3,19 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.favoriteBackground {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  line-height: 50vh;
+  background-image: url('../../assets/images/favorites.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.favoriteBackground h1 {
+  color: red;
+  font-size: 70px;
+}
