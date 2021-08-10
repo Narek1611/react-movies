@@ -18,7 +18,7 @@ export default function MovieDetails() {
       setMovieDetails(response);
       setLoading(false);
     });
-  }, []);
+  }, [id]);
 
   return (
     <section>
