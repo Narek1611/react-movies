@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
+    "eslint-plugin-react-hooks": "^4.2.1-alpha-64931821a-20210808",
     "formik": "^2.2.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -30,7 +31,11 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "off",
+      "react-hooks/exhaustive-deps": "off"
+    }
   },
   "browserslist": {
     "production": [
