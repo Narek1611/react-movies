@@ -15,18 +15,7 @@ import { Routes } from '../../constants/routes';
 import { Box } from '@material-ui/core';
 import './Register.css';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <a className='textM' href="https://github.com/KarlenNersisyan">
-        {'KarlenNersisyan-GitHub'}
-      </a>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -80,7 +69,7 @@ export default function SignUp() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h4">
             Register
           </Typography>
           <form className={classes.form} onSubmit={formik.handleSubmit}>
@@ -167,14 +156,12 @@ export default function SignUp() {
             </Button>
             <Grid>
               <Grid item >
-                <Link className={classes.textM} to="/">Already have an account? Log In</Link>
+                <Link className={classes.textM} to="/"><h3>Already have an account? Log In.</h3></Link>
               </Grid>
             </Grid>
           </form>
         </div>
-        <Box mt={2}>
-          <Copyright />
-        </Box>
+        
       </Container>
     </Box>
   );

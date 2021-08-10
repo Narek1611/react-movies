@@ -33,11 +33,11 @@ export default function Movies({ loading, movies, setOffset, setFavCount }) {
   }, []);
 
   return (
-    <section className="container">
+    <section className="containerMovie">
       {loading ? (
         <Loader />
       ) : !movies.length ? (
-        <div className="searchBackground">
+        <div>
           <h1>No Such Film</h1>
         </div>
       ) : (

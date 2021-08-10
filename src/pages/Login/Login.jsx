@@ -19,18 +19,7 @@ import { isUserValid } from '../../helpers/genre';
 import SignInError from '../../components/Errors/SignInError';
 import './Login.css';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <a color="inherit" href="https://github.com/KarlenNersisyan">
-        {'KarlenNersisyan-GitHub'}
-      </a>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -86,7 +75,13 @@ export default function Login() {
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
-          <Typography component="h5" variant="h5" className="textP" >
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          {/* <Typography component="h5" variant="h5" className="textP" >
             <PanToolTwoToneIcon className="icon" />
             Welcome to our website.
           </Typography>
@@ -96,7 +91,7 @@ export default function Login() {
                here
             </Link>
             :
-          </Typography>
+          </Typography> */}
           <Typography component="h2" variant="h4">
             Log In
           </Typography>
@@ -152,15 +147,13 @@ export default function Login() {
             <Grid>
               <Grid item>
                 <Link variant="body2" to="/register">
-                  Don't have an account? Register
+                  <h3>Don't have an account yet? Register.</h3>
                 </Link>
               </Grid>
             </Grid>
           </form>
         </div>
-        <Box mt={2}>
-          <Copyright />
-        </Box>
+        
       </Container>
     </Box>
   );

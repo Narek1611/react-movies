@@ -1,12 +1,12 @@
 .registerBackground {
-  background-image: url('../../assets/images/registerBackground.jpg');
+  background-image: url('../../assets/images/registerLoginBackground.jpg');
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
 }
 
 .textM {
-  color: white;
+  color: black;
 }
 
 @media screen and (max-width: 1330px) {

@@ -15,21 +15,18 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import PropTypes from 'prop-types';
 import { Routes } from '../../constants/routes';
-import './MovieCard.css';
 
 const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    maxWidth: '47vh',
-    margin: '20px',
-    border: '1px solid dimgrey',
-    borderRadius: '20px',
+    maxWidth: '43vh',
+    margin: '20px 9px',
   },
 
   titleName: {
-    color: 'blue',
+    color: 'black',
   },
 
   favBtn: {
@@ -111,26 +108,19 @@ export default function MovieCard({
         <Typography variant="body2" color="textSecondary" component="section">
           <section>{description.slice(0, 70)}...</section>
         </Typography>
-        <ul>
+        <br />
           {genres.map((genre, index) => {
             return (
-              <a
-                href="https://github.com/KarlenNersisyan"
-                target="_blank"
-                rel="noreferrer"
-                key={index}
-              >
-                <li className="genreName">{genre}</li>
-              </a>
-            );
+                <span key={index}> {genre}</span>  
+            )
           })}
-        </ul>
+        
       </CardContent>
       <CardActions disableSpacing>
         <IconButton
           className={classes.favBtn}
           size="small"
-          color="primary"
+          color="secondary"
           onClick={handleFavIconToggle}
           aria-label="add to favorites"
         >

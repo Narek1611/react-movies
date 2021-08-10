@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   backTopFab: {
     width: '50px',
     height: '50px',
+    color: 'red',
   },
 }));
 
@@ -71,9 +72,6 @@ export default function Header(props) {
       <ScrollTop {...props}>
         <Fab
           className={classes.backTopFab}
-          color="primary"
-          size="large"
-          aria-label="scroll back to top"
         >
           <ArrowUpwardIcon />
         </Fab>
