@@ -14,7 +14,6 @@ import { getLocalStorage, setLocalStorage } from '../../helpers/localStorage';
 import { storage } from '../../constants/storage';
 import { Routes } from '../../constants/routes';
 import { validationLogin } from '../../helpers/formValidation';
-import PanToolTwoToneIcon from '@material-ui/icons/PanToolTwoTone';
 import { isUserValid } from '../../helpers/genre';
 import SignInError from '../../components/Errors/SignInError';
 import './Login.css';
