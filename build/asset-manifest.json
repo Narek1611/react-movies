@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4920b390.chunk.css",
+    "main.js": "/static/js/main.04eeb070.chunk.js",
+    "main.js.map": "/static/js/main.04eeb070.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.195fb438.js",
+    "runtime-main.js.map": "/static/js/runtime-main.195fb438.js.map",
+    "static/js/2.b8766c14.chunk.js": "/static/js/2.b8766c14.chunk.js",
+    "static/js/2.b8766c14.chunk.js.map": "/static/js/2.b8766c14.chunk.js.map",
+    "static/js/3.66bdf68e.chunk.js": "/static/js/3.66bdf68e.chunk.js",
+    "static/js/3.66bdf68e.chunk.js.map": "/static/js/3.66bdf68e.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.4920b390.chunk.css.map": "/static/css/main.4920b390.chunk.css.map",
+    "static/js/2.b8766c14.chunk.js.LICENSE.txt": "/static/js/2.b8766c14.chunk.js.LICENSE.txt",
+    "static/media/Movies.css": "/static/media/movies_background.b78dba2b.jpg",
+    "static/media/Login.css": "/static/media/loginBackground.1921d878.png",
+    "static/media/Register.css": "/static/media/registerBackground.5e1527a0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.195fb438.js",
+    "static/js/2.b8766c14.chunk.js",
+    "static/css/main.4920b390.chunk.css",
+    "static/js/main.04eeb070.chunk.js"
+  ]
+}
