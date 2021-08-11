@@ -1,6 +1,4 @@
-# Movie App -> [Cinema-News](https://cinema-news.vercel.app/)
-
-![Cinema-News](./src/assets/readme/cinemaBackground.jpg)
+# Movie App
 
 _Description_
 ---
@@ -23,7 +21,6 @@ _Description_
 
 ---
 
-![Cinema-News](./src/assets/readme/libraries.jpeg)
 
 ## Used Libraries
 
