@@ -14,9 +14,8 @@
 }
 
 .favoriteBackground h1 {
-  color: rgb(255, 255, 255);
-  text-shadow: 1px 1px rgb(255, 0, 0);
+  color: hsl(0, 0%, 100%);
+  text-shadow: 1px 1px rgb(254, 0, 0);
   font-size: 70px;
 }
-
 
