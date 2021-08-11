@@ -13,10 +13,10 @@ export default function Favorite({ isAuth, setFavCount }) {
     : [];
 
   return isAuth ? (
-    <section className="container">
+    <section className="container3">
       {!movies.length ? (
         <div className='favoriteBackground'>
-          <h1>You have not any favorite(s)</h1>
+          <h1>No favorite movies yet</h1>
         </div>
       ) : (
         movies.map((movie) => {
