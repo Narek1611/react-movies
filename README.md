@@ -40,18 +40,3 @@ _Description_
 
     * [Axios](https://www.npmjs.com/package//axios)
 
----
-
-## Contact me
-
-* My
-
-    * [Twitter](https://twitter.com/nersisyan_karl)
-
-    * [Linkedin](https://www.linkedin.com/in/karlen-nersisyan/)
-
-    * [Codepen](https://codepen.io/karlennersisyan/)
-
-    * [Replit](https://replit.com/@KarlenNersisyan)
-
-    * [Telegram](https://t.me/NKarlen)
